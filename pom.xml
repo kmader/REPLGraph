@@ -1,0 +1,86 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>quant.tipl</groupId>
+    <artifactId>tipl-plots</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>plots</name>
+    <url>http://www.4quant.com</url>
+    <parent>
+        <groupId>quant.tipl</groupId>
+        <artifactId>quant-tipl</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_${scala.binary.version}</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>quant.tipl</groupId>
+            <artifactId>tipl-core</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.miglayout</groupId>
+            <artifactId>miglayout-javafx</artifactId>
+            <version>4.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spire-math</groupId>
+            <artifactId>spire_2.10</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.continuum.bokeh</groupId>
+            <artifactId>bokeh</artifactId>
+            <version>0.2</version>
+        </dependency>
+        <!--<dependency>
+           <groupId>org.specs2</groupId>
+           <artifactId>specs2</artifactId>
+           <version>1.14</version>
+           <scope>test</scope>
+         </dependency> -->
+
+
+
+    </dependencies>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.zenjava</groupId>
+                    <artifactId>javafx-maven-plugin</artifactId>
+                    <version>2.0</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <configuration>
+
+                    <mainClass>tipl.plots.Launch</mainClass>
+
+                </configuration>
+                <version>2.0</version>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
+
+
